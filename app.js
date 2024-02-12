@@ -8,12 +8,15 @@ console.log(rows);
 let headers = rows[0].split(",")
 let columnCount = headers.length
 
-console.log(`Number of headers: ${headers.length}`);
+console.log(`Number of headers: ${columnCount}`);
 console.log(headers);
 
+// create two-dimensional array
+let bigArray = [...headers]
 
-// for (const row of rows) {
-//   let cells = row.split(",")
-//   console.log(`${cells[0]} ${cells[1]} ${cells[2]} ${cells[3]}`);
-// }
+
+for (const row of rows) {
+  let cells = row.split(",")
+  console.log(`${cells}`);
+}
 
