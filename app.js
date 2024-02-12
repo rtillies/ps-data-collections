@@ -20,6 +20,16 @@ for (const row of rows) {
   bigArray.push([...cells])
   // console.log(`${cells}`);
 }
-
 console.log(bigArray);
 
+// create array of objects
+let objectArray = []
+
+let upperKeys = rows[0].split(",")
+let keys = [];
+
+upperKeys.forEach((key) => {
+  keys.push(key.toLowerCase())
+});
+
+console.log(keys);
