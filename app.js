@@ -72,3 +72,14 @@ const newObject7 = {
 objectArray.push(newObject7);
 
 console.log(objectArray);
+
+// Calculate average age of group
+let totalAge = 0
+objectArray.forEach((object) => {
+  totalAge += Number(object.age)
+})
+averageAge = objectArray.length > 0 ?
+ totalAge / objectArray.length :
+ 0
+
+console.log(`Average age: ${averageAge}`);
