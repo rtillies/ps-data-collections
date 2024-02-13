@@ -64,3 +64,11 @@ const newObject48 = {
 objectArray.splice(1, 0, newObject48);
 
 console.log(objectArray);
+
+// Add object at end of array
+const newObject7 = {
+  id: "7", name: "Bilbo", occupation: "None", age: "111"
+}
+objectArray.push(newObject7);
+
+console.log(objectArray);
