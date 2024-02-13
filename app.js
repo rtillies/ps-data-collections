@@ -51,3 +51,8 @@ for(i = 1; i < rows.length; i++) {
 }
 
 console.log(objectArray);
+
+// Part 4: Sorting and manipulating data
+
+// Remove last element
+objectArray.pop()
