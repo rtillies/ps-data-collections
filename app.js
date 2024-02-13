@@ -1,4 +1,3 @@
-
 /*************************************
   R-ALAB 308.4.1: 
   Working with Data Collections
@@ -19,14 +18,10 @@ let data = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,B
 // split long string by newline character
 let newline = "\n"
 let rows = data.split(newline)
-// console.log(rows);
 
 // split first row to determine headers and number of columns
 let headers = rows[0].split(",")
 let columnCount = headers.length
-
-// console.log(`Number of headers: ${columnCount}`);
-// console.log(headers);
 
 // create two-dimensional array
 let bigArray = [];
@@ -34,9 +29,12 @@ let bigArray = [];
 for (const row of rows) {
   let cells = row.split(",")
   bigArray.push([...cells])
-  // console.log(`${cells}`);
 }
+
+// Output to console
+console.log("** Parts 1-2: Array of Arrays **");
 console.log(bigArray);
+console.log();
 
 /*******************************
  ** PART 3: Transforming Data **
@@ -52,8 +50,6 @@ upperKeys.forEach((key) => {
   keys.push(key.toLowerCase())
 });
 
-// console.log(keys);
-
 // i: iterate through rows after header
 // j: iterate through columns
 // add column value to each object
@@ -62,15 +58,15 @@ for(i = 1; i < rows.length; i++) {
   let obj = {};
   let values = rows[i].split(",")
   for(j = 0; j < keys.length; j++) {
-    // console.log(keys[j]);
-    // console.log(rows[i]);
-    // console.log(values[j]);
     obj[keys[j]] = values[j];
   }
   objectArray.push(obj)
 }
 
+// Output to console
+console.log("** Part 3: Array of Objects **");
 console.log(objectArray);
+console.log();
 
 /*******************************************
  ** PART 4: Sorting and manipulating data **
@@ -85,26 +81,31 @@ const newObject48 = {
 }
 objectArray.splice(1, 0, newObject48);
 
-console.log(objectArray);
-
 // Add object at end of array
 const newObject7 = {
   id: "7", name: "Bilbo", occupation: "None", age: "111"
 }
 objectArray.push(newObject7);
 
+// Output to console
+console.log("** Part 4: Array of Objects **");
 console.log(objectArray);
+console.log();
 
 // Calculate average age of group
 let totalAge = 0
 objectArray.forEach((object) => {
   totalAge += Number(object.age)
 })
+
+// returns 0 if array is empty
 averageAge = objectArray.length > 0 ?
  totalAge / objectArray.length :
  0
 
-console.log(`Average age: ${averageAge}`);
+// Output to console
+console.log(`Part 4: Average age: ${averageAge}`);
+console.log();
 
 /*************************
  ** PART 5: Full Circle **
@@ -123,4 +124,7 @@ for (const object of objectArray) {
   csvFile += str.slice(0, -1) + newline
 }
 csvFile = csvFile.slice(0, -1)
+
+// Output to console
+console.log("** Part 5: CSV File **");
 console.log(csvFile);
