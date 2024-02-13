@@ -56,3 +56,11 @@ console.log(objectArray);
 
 // Remove last element
 objectArray.pop()
+
+// Insert object at index 1
+const newObject48 = {
+  id: "48", name: "Barry", occupation: "Runner", age: "25"
+}
+objectArray.splice(1, 0, newObject48);
+
+console.log(objectArray);
