@@ -2,7 +2,8 @@
 let data = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26"
 
 // split long string by newline character
-let rows = data.split("\n")
+let newline = "\n"
+let rows = data.split(newline)
 // console.log(rows);
 
 // split first row to determine headers and number of columns
@@ -83,3 +84,20 @@ averageAge = objectArray.length > 0 ?
  0
 
 console.log(`Average age: ${averageAge}`);
+
+// Part 5: Transform back to csv
+
+// CSV header
+let csvFile = keys.join(",") + newline
+// console.log(csvFile);
+
+for (const object of objectArray) {
+  let str = ""
+  for (const key of keys) {
+    str += object[key] + ","
+  }
+  // str.pop
+  csvFile += str.slice(0, -1) + newline
+}
+csvFile = csvFile.slice(0, -1)
+console.log(csvFile);
